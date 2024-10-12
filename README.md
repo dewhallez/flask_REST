@@ -1,5 +1,5 @@
 # flask_REST
-REST API using Flask, SQL Alchemy, Marshmallow, working with Pipenv and POSTMAN
+REST API using Flask, SQL Alchemy, Marshmallow, working with Pipenv and Postman
 
 
 
