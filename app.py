@@ -6,6 +6,7 @@ import os
 # initialize app
 app = Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
+
 # Creat Database
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'db.sqlite')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -31,9 +32,7 @@ class Product(db.Model):
         self.price = price
         self.qty = qty
 
-
 # Product Schema
-
 class ProductSchema(ma.Schema):
     class Meta:
         fields = ('id', 'name', 'description', 'price', 'qty')
@@ -42,7 +41,7 @@ class ProductSchema(ma.Schema):
 product_schema = ProductSchema()
 products_schema = ProductSchema(many=True)
 
-# Create a Product
+# Create Product
 @app.route('/product', methods=['POST'])
 def add_product():
 
